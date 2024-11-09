@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Choice Portal - Discussion</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // JavaScript to handle the "Post" button functionality
+    function addPost() {
+      const inputField = document.querySelector('.discussion-input input[type="text"]');
+      const userText = inputField.value.trim();
+
+      if (userText !== '') {
+        const postContainer = document.getElementById('postContainer');
+        const newPost = document.createElement('p');
+        newPost.textContent = userText;
+        newPost.className = 'user-post';
+        postContainer.appendChild(newPost);
+
+        // Clear the input field after posting
+        inputField.value = '';
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Career Choice Portal</h1>
+    <nav>
+      <a href="index.html">Welcome</a>
+      <a href="discussion.html">Discussion</a>
+      <a href="resources.html">Resources</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <section id="discussion">
+    <h2>Discussion: Share Your Thoughts</h2>
+    <p>Join the conversation and share your views or queries on career choices and parental influence.</p>
+
+    <!-- Posts will be appended here -->
+    <div id="postContainer" class="post-container"></div>
+
+    <!-- Input section for posting -->
+    <div class="discussion-input">
+      <input type="text" placeholder="Share your thoughts..." />
+      <button onclick="addPost()">Post</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Career Choice Portal | SAI PRANAV NUTI | SANAT GUPTA | PANKAJ KUMAR WALIA | JITENDER</p>
+  </footer>
+</body>
+</html>
